@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora recetas de cócteles, ingredientes y formas de preparación.">
+    <title>Mixology | Explorador de Cócteles</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">MIXOLOGY<span>.</span></a>
+        <span class="header-label">EXPLORADOR DE RECETAS</span>
+    </header>
+
+    <main>
+        <section class="hero">
+            <span class="eyebrow">TU PRÓXIMA RECETA FAVORITA</span>
+            <h1>El arte de preparar<br><span>algo extraordinario.</span></h1>
+            <p>Descubre nuevas combinaciones, explora ingredientes
+                y encuentra tu próximo cóctel favorito.</p>
+
+            <form id="searchForm" class="search-form">
+                <label for="searchInput" class="sr-only">
+                    Nombre del cóctel o ingrediente
+                </label>
+
+                <div class="search-box">
+                    <span class="search-icon" aria-hidden="true">⌕</span>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Ej. Margarita, vodka, mojito..."
+                        autocomplete="off"
+                        required
+                    >
+                    <button type="submit" id="searchButton">
+                        Buscar recetas
+                    </button>
+                </div>
+
+                <fieldset class="search-options">
+                    <legend>BUSCAR POR</legend>
+
+                    <label>
+                        <input type="radio" name="searchType"
+                               value="name" checked>
+                        Nombre
+                    </label>
+
+                    <label>
+                        <input type="radio" name="searchType"
+                               value="ingredient">
+                        Ingrediente
+                    </label>
+                </fieldset>
+            </form>
+
+            <div class="quick-search">
+                <span>PRUEBA:</span>
+                <button type="button" class="quick-btn" data-query="Margarita">
+                    Margarita
+                </button>
+                <button type="button" class="quick-btn" data-query="Mojito">
+                    Mojito
+                </button>
+                <button type="button" class="quick-btn" data-query="Gin">
+                    Gin
+                </button>
+            </div>
+        </section>
+
+        <section class="results-section" aria-labelledby="resultsTitle">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">DESCUBRE Y EXPERIMENTA</span>
+                    <h2 id="resultsTitle">Explora las recetas</h2>
+                </div>
+                <span id="resultCount" class="result-count"></span>
+            </div>
+
+            <div id="status" class="status" role="status"
+                 aria-live="polite">
+                Escribe un nombre o ingrediente para comenzar.
+            </div>
+
+            <div id="cocktailGrid" class="cocktail-grid"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="https://www.thecocktaildb.com/" target="_blank"
+           rel="noopener noreferrer">Datos proporcionados por TheCocktailDB</a>
+        <p>Explora con curiosidad. Prepara con creatividad.</p>
+    </footer>
+
+</body>
+</html>
